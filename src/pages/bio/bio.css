@@ -1,0 +1,10 @@
+.bio p {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2%;
+}
+
+.bio img {
+  width: 100%;
+  max-width: 750px;
+}
