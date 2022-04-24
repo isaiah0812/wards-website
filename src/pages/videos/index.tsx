@@ -1,12 +1,14 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
 import Menu from '../../components/menu';
+import WardVideo from '../../components/wardVideo';
+import Video from '../../models/video';
+import videos from './videos.json';
 
 export default function Videos() {
   return (
     <React.Fragment>
       <Menu />
-      <Image src="/ward_logo.png" style={{ width: '100%', maxWidth: 1200 }} />
+      {videos.map((video: Video) => <WardVideo name={video.name} youtubeId={video.youtubeId} />)}
     </React.Fragment>
   );
 }

@@ -6,7 +6,12 @@ export default function Tour() {
   return (
     <React.Fragment>
       <Menu />
-      <Image src="/ward_logo.png" style={{ width: '100%', maxWidth: 1200 }} />
+      <div>
+        Tour dates coming soon...
+      </div>
+      <div>
+        One, <Image src="/ward_logo.png" style={{ width: '5em' }} />
+      </div>
     </React.Fragment>
   );
 }

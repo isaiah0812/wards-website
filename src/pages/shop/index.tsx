@@ -10,7 +10,7 @@ export default function Shop() {
         Shop coming soon...
       </div>
       <div>
-        One, <Image src="/ward_logo.png" style={{ width: '5em' }} />
+        - One, <Image src="/ward_logo.png" style={{ width: '5em' }} />
       </div>
     </React.Fragment>
   );

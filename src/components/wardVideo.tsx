@@ -1,12 +1,10 @@
 import React from 'react';
-import { Container, Image } from 'react-bootstrap';
-import Menu from '../../components/menu';
+import Video from '../models/video';
 
-export default function Home() {
+export default function WardVideo(video: Video): JSX.Element {
   return (
-    <Container fluid style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Image src="/ward_logo.png" style={{ width: '65%' }} />
-      <Menu />
+    <div style={{ margin: '2%' }}>
+      <h1>{video.name}</h1>
       <div style={{
         position: 'relative',
         overflow: 'hidden',
@@ -23,13 +21,13 @@ export default function Home() {
             width: '100%',
             height: '100%',
           }}
-          src="https://www.youtube.com/embed/PJso1YRLR7k" 
-          title="WARD. - WHAT'S LIVING ON THE ROOF?" 
+          src={`https://www.youtube.com/embed/${video.youtubeId}`}
+          title={video.name}
           frameBorder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
         />
       </div>
-    </Container>
+    </div>
   )
 }
