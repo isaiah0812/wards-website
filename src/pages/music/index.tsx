@@ -1,13 +1,16 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
+import { Container } from 'react-bootstrap';
 import Menu from '../../components/menu';
-// import { Link } from 'react-router-dom';
+import MusicCard from './components/musicCard';
 
 export default function Music() {
   return (
     <React.Fragment>
       <Menu />
-      <Image src="/ward_logo.png" style={{ width: '100%', maxWidth: 1200 }} />
+      <h1 style={{ marginTop: '0.5%' }}>Music</h1>
+      <Container fluid style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+        <MusicCard />
+      </Container>
     </React.Fragment>
   );
 }

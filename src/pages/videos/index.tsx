@@ -8,7 +8,7 @@ export default function Videos() {
   return (
     <React.Fragment>
       <Menu />
-      {videos.map((video: Video) => <WardVideo name={video.name} youtubeId={video.youtubeId} />)}
+      {videos.map((video: Video) => <WardVideo name={video.name} youTubeId={video.youTubeId} />)}
     </React.Fragment>
   );
 }

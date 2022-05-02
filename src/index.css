@@ -13,3 +13,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.streaming-service-display::-webkit-scrollbar {
+  height: 10px;
+}
+
+.streaming-service-display::-webkit-scrollbar-track {
+  background: #f00505;
+  margin: 0px 0.5em;
+  border-radius: 100vw;
+}
+
+.streaming-service-display::-webkit-scrollbar-thumb {
+  background: black;
+  border: 1px solid #f00505;
+  border-radius: 100vw;
+}

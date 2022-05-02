@@ -22,12 +22,32 @@ const MenuItem = (props: MenuItemProps): JSX.Element => {
       style={{
         color: 'white',
         margin: '1em',
-        fontFamily: 'Noto Sans Mono, monospace',
         textDecoration: hovering ? 'underline' : 'none'
       }}
     >
       {props.text}
     </Link>
+  )
+}
+
+const ExternalMenuItem = (props: MenuItemProps): JSX.Element => {
+  const [hovering, setHovering] = useState(false);
+
+  const hover = () => setHovering(true);
+  const leave = () => setHovering(false);
+
+  return (
+    <a href={props.to} 
+      onMouseEnter={hover}
+      onMouseLeave={leave}
+      style={{
+        color: 'white',
+        margin: '1em',
+        textDecoration: hovering ? 'underline' : 'none'
+      }}
+    >
+      {props.text}
+    </a>
   )
 }
 
@@ -47,6 +67,7 @@ export default function Menu() {
             <MenuItem to="/shop" text="shop" />
             <MenuItem to="/tour" text="tour" />
             <MenuItem to="/videos" text="videos" />
+            <ExternalMenuItem to="https://www.reddit.com/r/wardandfriends/" text="forum" />
           </Nav>
         </Navbar.Collapse>
       </Container>
