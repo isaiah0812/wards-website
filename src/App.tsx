@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/footer';
 import Bio from './pages/bio';
 import Contact from './pages/contact';
 import Home from './pages/home';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/tour" element={<Tour />} />
         <Route path="/videos" element={<Videos />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
