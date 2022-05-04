@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
@@ -14,16 +15,18 @@ import Videos from './pages/videos';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/bio" element={<Bio />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/radio" element={<Radio />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/tour" element={<Tour />} />
-        <Route path="/videos" element={<Videos />} />
-      </Routes>
+      <Container fluid style={{ minHeight: 'calc(100vh - 5em)' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bio" element={<Bio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/radio" element={<Radio />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/tour" element={<Tour />} />
+          <Route path="/videos" element={<Videos />} />
+        </Routes>
+      </Container>
       <Footer />
     </div>
   );
