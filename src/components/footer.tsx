@@ -5,6 +5,8 @@ import { faReddit, faSpotify, faBandcamp, faSoundcloud, faYoutube, faInstagram, 
 import { faFileWaveform, faMusic } from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { ReactComponent as AppleMusicLogo } from '../assets/Apple_Music_Icon_blk.svg';
+import { ReactComponent as AudiomackLogo } from '../assets/Audiomack_Icon_wht.svg';
 
 
 type FooterItemProps = {
@@ -20,6 +22,11 @@ const footerLinks: FooterItemProps[] = [
     text: "Spotify"
   },
   {
+    to: "https://music.apple.com/us/artist/ward/1608812889",
+    icon: <AppleMusicLogo style={{ width: '1em', height: 'auto', fill: 'white', marginRight: '1em' }} />,
+    text: "Apple Music"
+  },
+  {
     to: "https://wardsworld.bandcamp.com/",
     icon: faBandcamp,
     text: "Bandcamp"
@@ -31,7 +38,7 @@ const footerLinks: FooterItemProps[] = [
   },
   {
     to: "https://audiomack.com/wardsworld",
-    icon: faFileWaveform,
+    icon: <AudiomackLogo style={{ width: '1em', height: 'auto', fill: 'white', marginRight: '1em' }} />,
     text: "Audiomack"
   },
   {
@@ -64,11 +71,6 @@ const footerLinks: FooterItemProps[] = [
     icon: faEnvelope,
     text: "E-mail"
   },
-  {
-    to: "https://music.apple.com/us/artist/ward/1608812889",
-    icon: faMusic,
-    text: "Apple Music"
-  },
 ]
 
 const FooterItem = (props: FooterItemProps): JSX.Element => {
@@ -87,6 +89,7 @@ const FooterItem = (props: FooterItemProps): JSX.Element => {
       color: 'white',
       transition: 'width 0.5s',
     }}>
+      {console.log(React.isValidElement(props.icon))}
       {React.isValidElement(props.icon) 
         ? props.icon
         : <FontAwesomeIcon icon={props.icon as IconDefinition} style={{ width: '1em', height: 'auto', marginRight: '1em' }} />}

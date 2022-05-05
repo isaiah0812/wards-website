@@ -14,6 +14,28 @@ code {
     monospace;
 }
 
+* {
+  scrollbar-color: #f00505 black;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  margin-block: 1em;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f00505;
+  border: 1px solid black;
+  border-radius: 100vw;
+}
+
 .triangle {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -24,12 +46,12 @@ code {
 
 .streaming-service-display::-webkit-scrollbar-track {
   background: #f00505;
-  margin: 0px 0.5em;
+  margin: 0.5em 0px;
   border-radius: 100vw;
 }
 
 .streaming-service-display::-webkit-scrollbar-thumb {
   background: black;
   border: 1px solid #f00505;
-  border-radius: 100vw;
+  border-radius: 100vh;
 }
