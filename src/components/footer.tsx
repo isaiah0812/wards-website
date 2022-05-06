@@ -89,7 +89,6 @@ const FooterItem = (props: FooterItemProps): JSX.Element => {
       color: 'white',
       transition: 'width 0.5s',
     }}>
-      {console.log(React.isValidElement(props.icon))}
       {React.isValidElement(props.icon) 
         ? props.icon
         : <FontAwesomeIcon icon={props.icon as IconDefinition} style={{ width: '1em', height: 'auto', marginRight: '1em' }} />}

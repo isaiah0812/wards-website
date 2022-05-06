@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
+import IMusic from '../music';
 
-export default function MusicCard() {
+export default function MusicCard(music: IMusic) {
+  const { title, cover, spotify, apple, bandcamp, soundCloud, audiomack, youTube } = music
+
   const [bgColor, setBgColor] = useState('black');
   const [border, setBorder] = useState('2px solid transparent');
   const [width, setWidth] = useState('30em');
@@ -56,9 +59,9 @@ export default function MusicCard() {
           transition: 'background-color 0.3s, border 0.3s'
         }}
       >
-        <Card.Img src="/wlotr_cover.jpg" style={{ height: '10em', width: 'auto' }} />
+        <Card.Img src={cover} style={{ height: '10em', width: 'auto' }} />
         <Card.Body style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '3%', textAlign: 'left' }}>
-          <Card.Title>WHAT'S LIVING ON THE ROOF</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text>Click to Listen</Card.Text>
         </Card.Body>
       </Card>
@@ -66,67 +69,77 @@ export default function MusicCard() {
         <div className="triangle" style={{ width: '2em', height: '2em', backgroundColor: '#f00505' }} />
         <div className="streaming-service-display" style={{ width: '100%', backgroundColor: '#f00505', padding: '2em', whiteSpace: 'nowrap', overflow: 'auto', scrollbarWidth: 'thin', scrollbarColor: 'black #f00505' }}>
           {/* Spotify */}
-          <iframe
-            title="Spotify"
-            style={{ borderRadius: 12, margin: '0px 0.75% 0px 0px', maxWidth: 480, padding: 0 }}
-            src="https://open.spotify.com/embed/album/0SvPs6xRhvS9KIIyEtBnbv?utm_source=generator"
-            width="100%"
-            height="450px"
-            frameBorder="0"
-            allowFullScreen={false}
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+          {spotify && 
+            <iframe
+              title="Spotify"
+              style={{ borderRadius: 12, margin: '0px 0.75% 0px 0px', maxWidth: 480, padding: 0 }}
+              src={spotify}
+              width="100%"
+              height="450px"
+              frameBorder="0"
+              allowFullScreen={false}
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" />
+          }
+          
           {/* Apple Music */}
-          <iframe
-            title="Apple Music"
-            allow="autoplay *; encrypted-media *; fullscreen *"
-            frameBorder="0"
-            style={{
-              width: '100%',
-              maxWidth: '30em',
-              height: '450px',
-              overflow: 'hidden',
-              background: 'transparent',
-              borderRadius: 0,
-              margin: '0px 0.75%',
-              scrollbarWidth: 'none',
-              padding: 0
-            }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
-            src="https://embed.music.apple.com/us/album/zaes-room/1550432322" />
-          {/* SoundCloud */}
-          <iframe
-            title="SoundCloud"
-            width="100%" 
-            height="450px"
-            scrolling="no"
-            frameBorder="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1196761027&color=%23f00505&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"
-            style={{
-              margin: '0px 0.75%',
-              maxWidth: 480,
-              padding: 0
-            }} />
+          {apple && (
+            <iframe
+              title="Apple Music"
+              allow="autoplay *; encrypted-media *; fullscreen *"
+              frameBorder="0"
+              style={{
+                width: '100%',
+                maxWidth: '30em',
+                height: '450px',
+                overflow: 'hidden',
+                background: 'transparent',
+                borderRadius: 0,
+                margin: '0px 0.75%',
+                scrollbarWidth: 'none',
+                padding: 0
+              }}
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" 
+              src={apple} />
+          )}
           {/* Bandcamp */}
-          <iframe
-            title="Bandcamp"
-            style={{
-              border: 0,
-              width: '100%',
-              height: 450,
-              margin: '0px 0.75%',
-              maxWidth: 480,
-              padding: 0
-            }} 
-            src="https://bandcamp.com/EmbeddedPlayer/album=2941431868/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" 
-            seamless
-          >
-            <a href="https://isaiahbullard.bandcamp.com/album/zaes-room">Zae&#39;s Room by Isaiah Bullard</a>
-          </iframe>
+          {bandcamp && (
+            <iframe
+              title="Bandcamp"
+              style={{
+                border: 0,
+                width: '100%',
+                height: 450,
+                margin: '0px 0.75%',
+                maxWidth: 480,
+                padding: 0
+              }} 
+              src={bandcamp}
+              seamless
+            >
+              <a href="https://isaiahbullard.bandcamp.com/album/zaes-room">{title} by WARD.</a>
+            </iframe>
+          )}
+          {/* SoundCloud */}
+          {soundCloud && (
+            <iframe
+              title="SoundCloud"
+              width="100%" 
+              height="450px"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              src={soundCloud}
+              style={{
+                margin: '0px 0.75%',
+                maxWidth: 480,
+                padding: 0
+              }} />
+          )}
           {/* Audiomack */}
+          {audiomack && (
           <iframe
             title="Audiomack"
-            src="https://audiomack.com/embed/zaemadethis/album/zaes-room?background=1&color=f00505"
+            src={audiomack}
             style={{
               border: 0,
               width: '100%',
@@ -137,6 +150,27 @@ export default function MusicCard() {
             }}
             scrolling="no"
             frameBorder="0" />
+          )}
+          {/* YouTube */}
+          {youTube && (
+            <iframe 
+              style={{
+                top: 0,
+                left: 0,
+                bottom: 0,
+                right: 0,
+                width: '100%',
+                height: 450,
+                maxWidth: 480,
+                margin: '0px 0.75%',
+              }}
+              src={youTube}
+              title="YouTube"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen />
+          )}
+          <div style={{ display: 'inline', height: 450, color: '#f00505'}}>VA</div>
         </div>
       </div>
     </div>

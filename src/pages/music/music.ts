@@ -1,9 +1,10 @@
-export default interface Music {
+export default interface IMusic {
   title: string,
+  cover: string,
   spotify?: string,
   apple?: string,
   bandcamp?: string,
   soundCloud?: string,
   audiomack?: string,
-  youTubeId?: string
+  youTube?: string
 }

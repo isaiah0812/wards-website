@@ -1,11 +1,19 @@
 [
   {
+    "title": "Zae's Room",
+    "cover": "/wlotr_cover.jpg",
+    "spotify": "https://open.spotify.com/embed/album/0SvPs6xRhvS9KIIyEtBnbv?utm_source=generator",
+    "apple": "https://embed.music.apple.com/us/album/zaes-room/1550432322",
+    "bandcamp": "https://bandcamp.com/EmbeddedPlayer/album=2941431868/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/",
+    "soundCloud": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1196761027&color=%23f00505&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=true",
+    "audiomack": "https://audiomack.com/embed/zaemadethis/album/zaes-room?background=1&color=f00505",
+    "youTube": "https://www.youtube.com/embed/videoseries?list=OLAK5uy_l_Xumhg_cn1d-hg9OFp84gf75AhVvVCVE"
+  },
+  {
     "title": "WHAT'S LIVING ON THE ROOF?",
-    "spotify": "",
-    "apple": "",
-    "bandcamp": "",
-    "soundCloud": "",
-    "audiomack": "",
-    "youTube": ""
+    "cover": "/wlotr_cover.jpg",
+    "bandcamp": "https://bandcamp.com/EmbeddedPlayer/album=2148470599/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=true/artwork=small/transparent=true/",
+    "soundCloud": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1218484714&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true",
+    "youTube": "https://www.youtube.com/embed/PJso1YRLR7k"
   }
 ]
