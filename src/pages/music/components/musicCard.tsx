@@ -68,7 +68,7 @@ export default function MusicCard() {
           {/* Spotify */}
           <iframe
             title="Spotify"
-            style={{ borderRadius: 12, margin: '0px 0.75%', maxWidth: 480, padding: 0 }}
+            style={{ borderRadius: 12, margin: '0px 0.75% 0px 0px', maxWidth: 480, padding: 0 }}
             src="https://open.spotify.com/embed/album/0SvPs6xRhvS9KIIyEtBnbv?utm_source=generator"
             width="100%"
             height="450px"
@@ -123,6 +123,20 @@ export default function MusicCard() {
           >
             <a href="https://isaiahbullard.bandcamp.com/album/zaes-room">Zae&#39;s Room by Isaiah Bullard</a>
           </iframe>
+          {/* Audiomack */}
+          <iframe
+            title="Audiomack"
+            src="https://audiomack.com/embed/zaemadethis/album/zaes-room?background=1&color=f00505"
+            style={{
+              border: 0,
+              width: '100%',
+              height: 450,
+              margin: '0px 0.75%',
+              maxWidth: 480,
+              padding: 0
+            }}
+            scrolling="no"
+            frameBorder="0" />
         </div>
       </div>
     </div>
